@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import GameView from './src/views/GameView';
+import { ChakraProvider } from '@chakra-ui/react'
 
 export default function App() {
   return (
+
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <GameView >
+
+      </GameView> 
+  </View>
   );
 }
 
@@ -18,3 +22,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
