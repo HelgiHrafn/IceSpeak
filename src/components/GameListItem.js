@@ -1,21 +1,28 @@
-import { Text, StyleSheet, View, Pressable } from "react-native";
+import { Text, StyleSheet, View, Pressable, TouchableOpacity, Image } from "react-native";
 
 export default function GameListItem({name}) {
     return (
-        <Pressable style={styles.listItem} onPress={() => alert(name)}>
+        <TouchableOpacity style={styles.listItem} onPress={() => alert(name)}>
+            <Image source={require('../../assets/logo.png')} style={{ width: 100, height: 100, borderRadius: 25}} />
             <Text style={styles.text}>{name}</Text>
-        </Pressable>
+        </TouchableOpacity>
     );
 
 }
 const styles = StyleSheet.create({
     listItem: {
-        width: '45%',
+        flex: 1,
+        display: 'flex',
         padding: 10,
         margin: 5,
-        backgroundColor: '#f9c2ff',
+        backgroundColor: 'lightblue',
         borderRadius: 5,
         alignItems: 'center',
+       
+        shadowColor: 'lightgrey',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.5,
+       
     },
     text: {
         fontSize: 25,

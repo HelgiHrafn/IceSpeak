@@ -31,7 +31,7 @@ export default function GameView () {
             margin: 20,
         },
         container: {
-            flex: 1,
+            width: '100%',
             backgroundColor: '#fff',
             alignItems: 'center',
             justifyContent: 'center',
