@@ -8,6 +8,7 @@ import HomeScreen from './src/views/HomeScreen';
 import SettingsView from './src/views/SettingsView';
 import UserView from './src/views/UserView';
 import { Ionicons } from '@expo/vector-icons/Ionicons';
+import GameView from './src/views/GameView';
 // import Ionicons from '@react-native-vector-icons/ionicons';
 const Tab = createBottomTabNavigator();
 
@@ -70,6 +71,16 @@ export default function App() {
           },
         }}
           />
+        <Tab.Screen name="Leikir" component={GameView}
+        options={{
+          tabBarLabel: 'Leikir',
+          tabBarIcon: ({ color, size }) => {
+            return <Icon source="gamepad"
+            color={MD3Colors.blue500}
+            size={20} />;
+          },
+        }}
+        />
         <Tab.Screen name="Notandi" component={UserView} 
         options={{
           tabBarLabel: 'Notandi',
@@ -90,6 +101,8 @@ export default function App() {
           },
         }}
         />
+
+     
       </Tab.Navigator>
     </NavigationContainer>
   );

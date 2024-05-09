@@ -1,30 +1,28 @@
 import { Text, StyleSheet, View, Pressable, TouchableOpacity, Image } from "react-native";
+import {Card, Button} from 'react-native-paper';
 
 export default function GameListItem({name}) {
     return (
-        <TouchableOpacity style={styles.listItem} onPress={() => alert(name)}>
-            <Image source={require('../../assets/Designer.jpeg')} style={{ width: 100, height: 100, borderRadius: 25}} />
-            <Text style={styles.text}>{name}</Text>
-        </TouchableOpacity>
+    
+        <Card style={styles.listItem}>
+            <Card.Title title={name} />
+            <Card.Cover source={{ uri: 'https://picsum.photos/200' }} />
+            <Card.Actions>
+                <Button mode='contained' onPress={() => console.log()}>Spila</Button>
+            </Card.Actions>
+        </Card>
     );
 
 }
 const styles = StyleSheet.create({
     listItem: {
         flex: 1,
-        display: 'flex',
-        padding: 10,
         margin: 5,
-        backgroundColor: 'lightblue',
-        borderRadius: 5,
-        alignItems: 'center',
-       
-        shadowColor: 'lightgrey',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.5,
+        padding: 5,
        
     },
     text: {
         fontSize: 25,
     },
+    
 });

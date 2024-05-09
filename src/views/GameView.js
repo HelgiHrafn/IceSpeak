@@ -1,50 +1,61 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , Image, Button, Pressable, Alert} from 'react-native';
+import React from 'react';
+import { Alert, Image, StyleSheet, View } from 'react-native';
+import {  Text, TextInput, Button, Card } from 'react-native-paper';
 
-import puffin from '../../assets/Designer.jpeg';
-import logo from '../../assets/logo.png';
-import GameList from '../components/GameList';
-
-
-export default function GameView () {
+export default function WordScrambleView() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.heading}>IceSpeak</Text>
-            <StatusBar style="auto" />
-            <Image
-                source={logo}
-                style={{ width: 300, height: 300, borderRadius: 75}}
+        <Card style={styles.container}>
+            <View style={styles.scrambledWord}>
+                <Text variant='headlineLarge'>Orðarugl!</Text>
+                <Image style={styles.image} source={require('../../assets/Puffin.jpeg')} />
+                <Text variant='bodyMedium'>Giskaðu á orðið sem er búið að rugla!</Text>
+            </View>
+            <View style={styles.scrambledWord}>
+                <Text variant='headlineLarge'>ruhnud</Text>
+            </View>
+            <TextInput
+                style={styles.input}
+                placeholder="Sláðu inn orðið"
+                mode='outlined'
+                
             />
-            <Pressable style={styles.button} onPress={() => alert('Jibbí! Þú vannst.')}>
-                <Text style={styles.buttonText}>Byrja Leik</Text>
-            </Pressable>
-            <GameList />
-
-        </View>
+            <Card.Actions style={styles.buttons}>
+                <Button mode='outlined' onPress={() => {}} >Næsta orð</Button>
+                <Button mode='contained' onPress={() => alert("Rétt!")} >Giska</Button>
+                
+            </Card.Actions>
+        </Card>
     );
-    }
-
-    const styles = StyleSheet.create({
-        heading: {
-            fontSize: 30,
-            fontWeight: 'bold',
-            margin: 20,
-        },
-        container: {
-            width: '100%',
-            backgroundColor: '#fff',
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-        button: {
-            backgroundColor: '#f01d71',
-            color: 'white',
-            padding: 10,
-            borderRadius: 5,
-            margin: 20,
-        },
-        buttonText: {
-            color: 'white',
-            fontSize: 20,
-        },
-    });
+}
+const styles = StyleSheet.create({
+    container: {
+      
+        padding: 16,
+        margin: 16,
+        backgroundColor: '',
+        
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 16,
+    },
+    scrambledWord: {
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 16,
+    },
+    input: {
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 16,
+    },
+    image: {
+        width: 200,
+        height: 200,
+        borderRadius: 30,
+        margin: 16,
+    },
+});
