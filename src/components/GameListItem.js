@@ -1,14 +1,14 @@
 import { Text, StyleSheet, View, Pressable, TouchableOpacity, Image } from "react-native";
 import {Card, Button} from 'react-native-paper';
 
-export default function GameListItem({name}) {
+export default function GameListItem({name, navigation}) {
     return (
     
         <Card style={styles.listItem}>
             <Card.Title title={name} />
-            <Card.Cover source={{ uri: 'https://picsum.photos/200' }} />
+            <Card.Cover source={{ uri: 'https://picsum.photos/300' }} />
             <Card.Actions>
-                <Button mode='contained' onPress={() => console.log()}>Spila</Button>
+                <Button mode='contained' onPress={() => navigation.navigate('GameView')}>Spila</Button>
             </Card.Actions>
         </Card>
     );

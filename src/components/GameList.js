@@ -2,13 +2,13 @@ import { View, StyleSheet} from "react-native";
 import GameListItem from "./GameListItem";
 import { FlatList } from "react-native";
 
-export default function GameList(){
-    const games = [ "Orðarugl", "Blabla", "Eitthvað", "LundaLeikur", "SetningaLeikur", "OrðaLeikur", "Leikur", "Annar Leikur" ];
+export default function GameList({navigation}){
+    const games = [ "Orðarugl", "Stafarugl", "MálfræðiMysa", "Lunda-Leikur", "SetningaSull", "FuglaFornöfn", "Leikur", "Annar Leikur" ];
     return (
         <View style={styles.container}>
         <FlatList
             data={games}
-            renderItem={({item}) => <GameListItem name={item} />}
+            renderItem={({item}) => <GameListItem name={item} navigation={navigation}/>}
             keyExtractor={item => item}
             numColumns={2}
         />
@@ -20,7 +20,7 @@ styles = StyleSheet.create({
         width: '100%',
         flex: 1,
         backgroundColor: '#fff',
-        padding: 10,
+        paddingHorizontal: 10,
 
         
     },

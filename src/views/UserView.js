@@ -7,11 +7,11 @@ const UserView = () => {
     return (
         <View style={styles.container}>
             <View style={styles.box}>
-                <Image style={styles.image} source={require('../../assets/defaultAvatar.jpg')} />
+                <Image style={styles.image} source={require('../../assets/Designer.jpeg')} />
                 <Text style={styles.title}>{user?.name || 'Notandi Notandason'}</Text>
             </View>
             <View style={styles.buttonBox}>
-                <Button style={styles.button} mode="contained" onPress={()=> console.log()}>Kaupa áskrift</Button>
+                <Button style={styles.button} mode="contained" onPress={()=> {}}>Kaupa áskrift</Button>
                 <Button style={styles.button} mode="outlined" onPress={() => setUser(null)}>Skrá út</Button>
             </View>
             

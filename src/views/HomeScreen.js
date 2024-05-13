@@ -1,11 +1,19 @@
 import { StyleSheet, Text, View } from "react-native";
 import GameList from "../components/GameList";
 
-export default function HomeScreen() {
+import { createStackNavigator } from '@react-navigation/stack';
+import GameView from "./GameView";
+const Stack = createStackNavigator();
+
+export default function HomeScreen({ navigation }) {
     return (
-        <View style={styles.container}>
-            <GameList />
-        </View>
+      
+            <Stack.Navigator>
+                <Stack.Screen name="GameList" component={GameList} />
+                <Stack.Screen name="GameView" component={GameView} />
+            </Stack.Navigator>
+            
+    
     );
 }
 

@@ -38,13 +38,13 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 16,
+     
     },
     scrambledWord: {
         alignContent: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: 16,
+        marginBottom: 16,
     },
     input: {
         height: 40,
@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
         marginBottom: 16,
     },
     image: {
-        width: 200,
-        height: 200,
+        width: 150,
+        height: 150,
         borderRadius: 30,
         margin: 16,
     },
