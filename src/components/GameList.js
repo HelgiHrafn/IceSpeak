@@ -4,12 +4,12 @@ import { FlatList } from "react-native";
 
 export default function GameList({navigation}){
     const games = [
-        { name: "Orðarugl", image: require("../../assets/ordarugl.jpeg") },
-        { name: "Stafarugl", image: require("../../assets/stafarugl.jpeg") },
-        { name: "MálfræðiMysa", image: require("../../assets/malfraedimysa.jpeg") },
-        { name: "Lunda-Leikur", image: require("../../assets/lundaleikur.jpeg") },
-        { name: "SetningaSull", image: require("../../assets/setningasull.jpeg") },
-        { name: "FuglaFornöfn", image: require("../../assets/fuglafornofn.jpeg") }
+        { id: 0, name: "Orðarugl", image: require("../../assets/ordarugl.jpeg") },
+        { id: 1, name: "Stafarugl", image: require("../../assets/stafarugl.jpeg") },
+        { id: 2, name: "MálfræðiMysa", image: require("../../assets/malfraedimysa.jpeg") },
+        { id: 3, name: "Lunda-Leikur", image: require("../../assets/lundaleikur.jpeg") },
+        { id: 4, name: "SetningaSull", image: require("../../assets/setningasull.jpeg") },
+        { id: 5, name: "FuglaFornöfn", image: require("../../assets/fuglafornofn.jpeg") }
     ];
     return (
         <View style={styles.container}>
