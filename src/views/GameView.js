@@ -7,7 +7,7 @@ export default function WordScrambleView() {
         <Card style={styles.container}>
             <View style={styles.scrambledWord}>
                 <Text variant='headlineLarge'>Orðarugl!</Text>
-                <Image style={styles.image} source={require('../../assets/Puffin.jpeg')} />
+                <Image style={styles.image} source={require('../../assets/stafarugl.jpeg')} />
                 <Text variant='bodyMedium'>Giskaðu á orðið sem er búið að rugla!</Text>
             </View>
             <View style={styles.scrambledWord}>
