@@ -110,7 +110,7 @@ export default function App() {
           />
           <Tab.Screen
             name="Search"
-            component={DefinitionGameView}
+            component={SearchView}
             options={{
               headerStyle: { backgroundColor: theme.colors.primary },
               headerTintColor: theme.colors.background,

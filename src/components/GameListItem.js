@@ -3,13 +3,13 @@ import {Card, Button, useTheme} from 'react-native-paper';
 
 export default function GameListItem({game, navigation}) {
     const theme = useTheme();
+    const gameID = game.id.toString();
     return (
-    
         <Card theme={theme} style={styles.listItem}>
             <Card.Title title={game.name} />
             <Card.Cover source={game.image} />
             <Card.Actions>
-                <Button mode='contained' onPress={() => navigation.navigate('GameView')}>Spila</Button>
+                <Button mode='contained' onPress={() => navigation.navigate(gameID)}>Spila</Button>
             </Card.Actions>
         </Card>
     );
