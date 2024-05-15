@@ -13,7 +13,7 @@ export default function HomeScreen({ navigation }) {
 
         <Stack.Navigator>
             <Stack.Screen  name="GameList" component={GameList} options={{headerStyle:{backgroundColor: theme.colors.primary}, headerTintColor: theme.colors.background, title: 'Leikir'}}/>
-            <Stack.Screen name="GameView" component={GameView} options={{headerStyle:{backgroundColor: theme.colors.primary}}}/>
+            <Stack.Screen name="GameView" component={GameView} options={{headerStyle:{backgroundColor: theme.colors.primary}, headerTintColor: theme.colors.background}}/>
         </Stack.Navigator>
     
     );
