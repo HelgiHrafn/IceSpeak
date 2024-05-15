@@ -1,13 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Image } from 'expo-image';
 import { Button } from 'react-native-paper';
 const UserView = () => {
     const [user, setUser] = React.useState(null);
-
+    const blurhash =
+    '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+  
     return (
         <View style={styles.container}>
             <View style={styles.box}>
-                <Image style={styles.image} source={require('../../assets/Designer.jpeg')} />
+                <Image style={styles.image} source={require('../../assets/Designer.jpeg')} placeholder={{blurhash}} />
                 <Text style={styles.title}>{user?.name || 'Notandi Notandason'}</Text>
             </View>
             <View style={styles.buttonBox}>

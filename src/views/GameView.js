@@ -1,7 +1,7 @@
 import React from 'react';
-import { Alert, Image, StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import {  Text, TextInput, Button, Card } from 'react-native-paper';
-
+import { Image } from 'expo-image';
 export default function WordScrambleView() {
     const [word, setWord] = React.useState('');
     const [scrambledWord, setScrambledWord] = React.useState('');
@@ -23,6 +23,7 @@ export default function WordScrambleView() {
         const randomIndex = Math.floor(Math.random() * wordList.length);
         setWord(wordList[randomIndex]);
         setScrambledWord(scrambleWord(wordList[randomIndex]));
+        setIsCorrect(false);
     }
     const checkGuess = () => {
         if (guess === word) {
@@ -35,12 +36,12 @@ export default function WordScrambleView() {
     React.useEffect(() => {
         nextWord();
     }, []);
-
+    const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     return (
         <Card style={styles.container}>
             <View style={styles.scrambledWord}>
                 <Text variant='headlineLarge'>Orðarugl!</Text>
-                <Image style={styles.image} source={require('../../assets/stafarugl.jpeg')} />
+                <Image style={styles.image} source={require('../../assets/stafarugl.jpeg')} placeholder={{blurhash}}/>
                 <Text variant='bodyMedium'>Giskaðu á orðið sem er búið að rugla!</Text>
             </View>
             <View style={styles.scrambledWord}>
@@ -54,7 +55,7 @@ export default function WordScrambleView() {
                 onChangeText={setGuess}
             />
             <Card.Actions style={styles.buttons}>
-                <Button mode='outlined' onPress={nextWord}>Sleppa</Button>
+                <Button mode='outlined' onPress={nextWord}>Næsta</Button>
                 <Button mode='contained' onPress={checkGuess}>Áfram</Button>
             </Card.Actions>
             {isCorrect && <Text variant='bodyMedium'>Rétt!</Text>}
@@ -84,8 +85,7 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
+  
         marginBottom: 16,
     },
     image: {

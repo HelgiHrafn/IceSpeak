@@ -1,12 +1,12 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native';
-import { Button, Card } from 'react-native-paper';
+import { Button, Card, Text } from 'react-native-paper';
 
 export default function SearchResult({ name }) {
     return (
-        <TouchableOpacity style={styles.container}>
+        <Card style={styles.container}>
             <Text style={styles.text}>{name}</Text>
-        </TouchableOpacity>
+        </Card>
     );
 }
 const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 5,
         padding: 10,
-        backgroundColor: '#fff',
+  
         borderRadius: 10,
         
     },

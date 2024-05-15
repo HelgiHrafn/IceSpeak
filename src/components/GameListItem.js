@@ -1,10 +1,11 @@
-import { Text, StyleSheet, View, Pressable, TouchableOpacity, Image } from "react-native";
-import {Card, Button} from 'react-native-paper';
+import { Text, StyleSheet, View, Pressable, TouchableOpacity } from "react-native";
+import {Card, Button, useTheme} from 'react-native-paper';
 
 export default function GameListItem({game, navigation}) {
+    const theme = useTheme();
     return (
     
-        <Card style={styles.listItem}>
+        <Card theme={theme} style={styles.listItem}>
             <Card.Title title={game.name} />
             <Card.Cover source={game.image} />
             <Card.Actions>
