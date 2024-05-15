@@ -41,8 +41,3 @@ To get started with Kafteinn Goggur, follow these steps:
 6. Scan the QR code displayed in the terminal or in the browser window that opens after running `npm start`.
 
 7. The app should now be running on your mobile device.
-
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
